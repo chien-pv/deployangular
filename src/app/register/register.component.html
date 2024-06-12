@@ -1,0 +1,12 @@
+<h1>Register Form</h1>
+<div *ngIf="err" class="alert alert-danger" role="alert">
+    {{err.error.message}}
+</div>
+<form (ngSubmit)="onSubmit(formLogin)" #formLogin="ngForm">
+    <label>Email</label>
+    <input class="form-control" type="email" ngModel name="email">
+    <label>Password</label>
+    <input class="form-control" type="password" ngModel name="password">
+    <br>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>

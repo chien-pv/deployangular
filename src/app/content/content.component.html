@@ -1,0 +1,14 @@
+<div class="content">
+    <app-search (searchParams)="getParamsSearch($event)"></app-search>
+    <div class="d-flex justify-content-between">
+        <h5>All Listings </h5> <small>Searching " {{params}}"
+        </small>
+        <div>
+            <fa-icon [icon]="faFilter"></fa-icon>
+            Filter
+        </div>
+    </div>
+    <app-productitem routerLink="/product/detail"
+        *ngFor="let item of listProduct"
+        [product]='item' (click)="handleClickItem(item)"></app-productitem>
+</div>
